@@ -15,6 +15,10 @@ func call<V, T>(f: (V) -> (() -> T))(s: V) -> T {
 }
 print([1, 2, 3].map(call(Int.successor)))
 /*:
+That looks more complicated than it is:
+The call function removes one layer of curry(?:) from the function it is applied to.
+*/
+/*:
 ## This is for the lazy ones
 So, currying can be used for lazy evalution - but it is ugly.
 This is better:
@@ -25,7 +29,7 @@ let wait = words.lazy.map { (word: String) -> String in
 }
 print(wait[0])
 /*:
-Looking at the output, you should see "Hello" (output of the print-statement in line 135) and "HELLO", which is the first element of `wait` - but note that `wait` has no real elements at all:\
+Looking at the output, you should see "Hello" (output of the print-statement in line 27) and "HELLO", which is the first element of `wait` - but note that `wait` has no real elements at all:\
 It just has a reference to `words`, and when you pick an element, it generates the result by applying your function to the element of the underlying collection.
 ---
 As a passionate Swift-coder you might have wondered why `words` wasn't introduced as a constant (using `let` instead of `var`).\
