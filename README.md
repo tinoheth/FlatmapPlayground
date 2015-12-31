@@ -1,6 +1,7 @@
 # FlatmapPlayground
 Recenctly, I came across some posts regarding `map` and `flatMap`, and that they behave strange, especially when dealing with optionals.
 I thought those methods can't be that hard, so I created a playgroud to do some experiments...
+
 And to learn something more, I tried out the markup documentation feature of playgrounds as well (this text is only a "preview").
 
 `let words = ["Hello", "this is", "an", "example"]`
@@ -15,7 +16,8 @@ var simple = [1, 3, 5].map {
 	return $0 * 2
 }
 ```
-The result should be `[2, 6, 10]`: `map` just takes every element from the collection, feeds it to the supplied function and puts the result in a new collection.\
+The result should be `[2, 6, 10]`: `map` just takes every element from the collection, feeds it to the supplied function and puts the result in a new collection.
+
 To make it easier to concentrate on the topic and show that map works with plain old functions as well, we define
 ```
 func extractCharacters(source: String) -> [Character] {
