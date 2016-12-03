@@ -7,11 +7,11 @@ let container: Character? = "A"
 let mapCharacter = container.map { character in
 	return character
 }
-print(mapCharacter)
+print(mapCharacter ?? "Nil")
 let flatMapCharacter = container.flatMap { (character: Character) in
 	return character
 }
-print(flatMapCharacter)
+print(flatMapCharacter ?? "Nil")
 /*:
 Not that amazing. Maybe there is something special with nil?
 */

@@ -34,7 +34,7 @@ Looks similar, but there are not as many arrays - only one, containing the chara
 This process happens without recursion, as you can see when you enclose the result in another array:
 */
 words.flatMap { word in
-	return [extractCharacters(word)]
+	return [extractCharacters(source: word)]
 }
 //: It is the same output `map` generates without the "boxing".
 
